@@ -8,7 +8,7 @@
 import UIKit
 
 class SetsViewController: UIViewController {
-
+    
     @IBOutlet weak var firstTF: UITextField!
     @IBOutlet weak var secondTF: UITextField!
     @IBOutlet weak var sameLettersButton: UIButton!
@@ -34,16 +34,16 @@ class SetsViewController: UIViewController {
         sameLettersLabel.text = "\(string)"
     }
     @IBAction func notMatchAction(_ sender: Any) {
-            guard let firstText = firstTF.text else {return}
-            guard let secondText = secondTF.text else {return}
-            var string = ""
-            for ch in firstText {
-                if secondText.contains(ch) {
-                }else {
-                    string += String(ch)
-                }
+        guard let firstText = firstTF.text else {return}
+        guard let secondText = secondTF.text else {return}
+        var string = ""
+        for ch in firstText {
+            if secondText.contains(ch) {
+            } else {
+                string += String(ch)
             }
-            notMatchLabel.text = "\(string)"
+        }
+        notMatchLabel.text = "\(string)"
     }
     @IBAction func uniqueCharAction(_ sender: Any) {
         guard let firstText = firstTF.text else {return}
@@ -54,7 +54,7 @@ class SetsViewController: UIViewController {
         }
         for letter in secondText {
             if firstText.contains(letter) {} else {string += String(letter)}
-    }
+        }
         uniqueCharsLabel.text = "\(string)"
     }
     override func viewDidLoad() {
@@ -62,17 +62,17 @@ class SetsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
      qwerty
      qw
      erty
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
