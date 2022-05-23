@@ -67,16 +67,11 @@ class DictionariesViewController: UIViewController {
                 self.findNonExistingArray.setTitle("It's not existing item time:  \(timeInterval) ms", for: .normal)
             }
         }
-        
-        
     }
     @IBAction func findFirstContactDictionaryAction(_ sender: Any) {
         let start = DispatchTime.now()
         findFirstContactDictionary.setTitle("", for: .normal)
         dictionarySpinnerFirst.startAnimating()
-        //        let sortedOne = dictionary.sorted { (first, second) -> Bool in
-        //            return first.key < second.key
-        //        }
         for (x,_) in dictionary {
             if x == "Name1" {
                 let end = DispatchTime.now()
@@ -88,8 +83,6 @@ class DictionariesViewController: UIViewController {
                 }
             }
         }
-        
-        
     }
     @IBAction func findLastContactDictionaryAction(_ sender: Any) {
         let start = DispatchTime.now()
@@ -122,7 +115,6 @@ class DictionariesViewController: UIViewController {
                 self.findNonExistingDictionary.setTitle("It's not existing item time:  \(timeInterval) ms", for: .normal)
             }
         }
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

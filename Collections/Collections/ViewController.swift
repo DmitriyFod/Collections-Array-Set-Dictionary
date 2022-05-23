@@ -20,10 +20,6 @@ class ViewController: UIViewController {
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = UIStoryboard(name: "ViewController", bundle: nil).instantiateViewController(withIdentifier: "Your VC identifier") as! YourViewController
-//        // pass your data and configure the viewcontroller here
-//        navigationController?.pushViewController(vc, animated: true)
-//        performSegue(withIdentifier: "showDetails", sender: self)
         if indexPath.row == 0 {
             performSegue(withIdentifier: "showArrays", sender: self)
         }else if indexPath.row == 1 {

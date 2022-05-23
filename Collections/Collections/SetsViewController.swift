@@ -18,14 +18,12 @@ class SetsViewController: UIViewController {
     @IBOutlet weak var notMatchLabel: UILabel!
     @IBOutlet weak var uniqueCharsLabel: UILabel!
     @IBAction func sameLettersAction(_ sender: Any) {
-        guard let firstText = firstTF.text else {return}
-        guard let secondText = secondTF.text else {return}
+        guard let firstText = firstTF.text, let secondText = secondTF.text else {return}
         var string = ""
         for ch in firstText {
             for letter in secondText {
                 if ch == letter {
-                    if string.contains(ch) {
-                    } else {
+                    if !string.contains(ch) {
                         string += String(ch)
                     }
                 }
@@ -34,26 +32,23 @@ class SetsViewController: UIViewController {
         sameLettersLabel.text = "\(string)"
     }
     @IBAction func notMatchAction(_ sender: Any) {
-        guard let firstText = firstTF.text else {return}
-        guard let secondText = secondTF.text else {return}
+        guard let firstText = firstTF.text, let secondText = secondTF.text else {return}
         var string = ""
         for ch in firstText {
-            if secondText.contains(ch) {
-            } else {
+            if !secondText.contains(ch) {
                 string += String(ch)
             }
         }
         notMatchLabel.text = "\(string)"
     }
     @IBAction func uniqueCharAction(_ sender: Any) {
-        guard let firstText = firstTF.text else {return}
-        guard let secondText = secondTF.text else {return}
+        guard let firstText = firstTF.text, let secondText = secondTF.text else {return}
         var string = ""
         for ch in firstText {
-            if secondText.contains(ch) {} else {string += String(ch)}
+            if !secondText.contains(ch) {string += String(ch)}
         }
         for letter in secondText {
-            if firstText.contains(letter) {} else {string += String(letter)}
+            if !firstText.contains(letter) {string += String(letter)}
         }
         uniqueCharsLabel.text = "\(string)"
     }
